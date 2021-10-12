@@ -28,8 +28,6 @@ sd["foo"] = new Value("INT",1)
 console.log(sd)
 */
 
-type InternStatus = ":internal" | ":external" | ":inherited" | "nil"
-
 class Package {
 	name :string
 	nickname :string
