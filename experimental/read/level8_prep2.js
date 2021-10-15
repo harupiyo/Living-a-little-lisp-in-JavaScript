@@ -72,6 +72,7 @@ function array2cons(arr){
 // console.log( array2cons( unflatten( [ "(", "(", ")", ")" ] ))) 
 	// Cons { car: null, cdr: null }
 
+// こうなるはずだ
 // (V >) (V >)  (V NIL)
 // NIL   (V NIL)(V NIL)
 //       123    456
