@@ -85,6 +85,7 @@ export class Cons {
 	}
 }
 
+/*
 let c1 = new Cons( new Value("INT", 1), new Value("INT", 2) );
 console.log(c1);
 
@@ -99,3 +100,4 @@ c4.cdr = c4;
 console.log(c4)
 // => Cons { car: Value { tag: { type: "INT", constant: false }, val: 1 }, cdr: [Circular] }
 // できているね
+*/

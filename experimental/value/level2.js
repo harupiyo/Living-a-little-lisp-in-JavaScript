@@ -28,6 +28,7 @@ export function make_constant( value_obj ){
 }
 
 
+/*
 let v = new Value("INT",1)
 console.log(v)
 
@@ -42,4 +43,4 @@ try {
 }catch(e){
 	console.log(e)
 }
-
+*/

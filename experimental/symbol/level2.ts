@@ -35,6 +35,7 @@ export class LSymbol {
 	}
 }
 
+/*
 // new symbole
 var s1 = new LSymbol("FOO")
 console.debug(s1)
@@ -47,4 +48,4 @@ console.debug(s1)
 
 console.debug(s1.symbol_value())
 	// Value { tag: { type: "INT", constant: false }, val: 3 }
-
+*/

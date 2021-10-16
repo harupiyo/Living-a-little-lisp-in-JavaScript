@@ -59,9 +59,9 @@ export class Package {
 				if(p.hasOwnProperty("external_symbols")){
 					for (const key in p.external_symbols) {
 						if(this.inherited_symbols.hasOwnProperty(key)){
-							throw("すでにこのシンボルは継承済みです")
+							throw("Package:すでにこのシンボルは継承済みです")
 						}else{
-							console.debug("シンボルを継承しました")
+							console.debug("Package:シンボルを継承しました")
 							this.inherited_symbols[key] = p.external_symbols[key]
 						}
 					}
@@ -82,7 +82,7 @@ export class Package {
 		}
 		else{
 			let s = new LSymbol(name)
-			console.debug("make new symbol and intern it. シンボルを作ってインターンしました.")
+			console.debug("Package: make new symbol and intern it. シンボルを作ってインターンしました.")
 			this.internal_symbols[name] = s
 			return [s, "NIL"]
 		}
@@ -99,7 +99,7 @@ export class Package {
 		}
 		else{
 			let s = new LSymbol(name)
-			console.debug("make new symbol and intern it. シンボルを作ってエクスポートしました.")
+			console.debug("Package: make new symbol and intern it. シンボルを作ってエクスポートしました.")
 			this.external_symbols[name] = s
 		}
 		return "t"
@@ -118,9 +118,11 @@ export class Package {
 	}
 }
 
+/*
 // USE-PACKAGE する大元のパッケージを作り、外部シンボルを作る
 let p0 = new Package("COMMON-LISP", [null])
 let [s0,ret] = p0.intern("MACHINE-TYPE")
 s0.set( new Value("STRING", "inside JavaScript") )
 
 console.debug( p0.find_symbol("MACHINE-TYPE") )	// LSymbol "MACHINE-TYPE"
+*/
