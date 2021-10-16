@@ -70,10 +70,13 @@ level1.js で明らかになった問題を解決する
 */
 
 import { Value } from "../value/level2.js"
+import { LSymbol } from '../symbol/level2.ts'
 
-type cons_pointer = Cons|Value
+declare type atom = string | number | LSymbol | Value | null	// null as NIL
+declare type s_expr = atom | Cons
+export type cons_pointer = s_expr
 
-class Cons {
+export class Cons {
 	car: cons_pointer
 	cdr: cons_pointer
 	constructor(car:cons_pointer,cdr:cons_pointer){
