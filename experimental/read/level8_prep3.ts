@@ -16,8 +16,27 @@ function unflatten(flat_list:Array<string>, level:number = 0): t_stack|string {
 		return ret
 	}
 
-	let token:string|undefined = flat_list.shift()	// flat_list は空でなない
-	if(token === undefined) throw ("[TODO] 万一にも起こりえない不具合. TypeScript の型対策のためだけのコード");
+	let token = (flat_list.shift() as string)
+		/*
+		let token: string = tokens.shift()
+		と書きたいのだが、token にundefined 値は入れられないというエラーが出てしまう。undefined とはなんだ？やぶから棒に。
+		flat_list はArray<string> なのでundefined になることはないはずだが、
+		そうか、.shift() の返り値の型に undefined が含まれているのか。
+
+			let a = []
+			a.shift() => undefined
+
+		しかしこのプログラムの文脈では、最初に
+			if(flat_list.length === 0){ ... return }
+		とlength == 0 の可能性を処理しているので、ここでundefined になることはない。
+
+		さて、最初はこのように書いていたが、
+			let tmp: string|undefined = flat_list.shift(): string
+			let ttoken: string = tmp === undefined ? "undefined" : tmp	// coerce
+
+		より的確なこの書き方を覚えてこのようにした。
+			let token = (flat_list.shift() as string)
+		*/
 
 	if(token == "("){
 		const newlevel = level + 1
