@@ -34,7 +34,7 @@ let paren_level: number		= 0
 let type_number_p: Boolean	= true
 let point_number: number	= 0	// 小数点記号の現れる回数
 
-function reader(input_str:string): s_expr|void {
+export function reader(input_str:string): s_expr|void {
 	// 再帰呼出しにより
 	// 文字列の末尾に達していたら
 	if(input_str.length == 0){
@@ -183,6 +183,8 @@ function array2cons( arr:t_stack|string ):Cons|null|string {
 	return (cons_store[0] as Cons)
 }
 
+
+console.debug( reader("(a)") )		// Cons( 1 . NIL )
 /*
 console.debug( reader("()") )		// NIL
 console.debug( reader("(())") )		// (NIL . NIL) as (NIL)
